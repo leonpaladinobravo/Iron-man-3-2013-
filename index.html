@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iron Man 3 (2013)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14100f;
+    --panel: #1f1816;
+    --red: #b3202a;
+    --gold: #e0ae4b;
+    --arc: #7fe6ff;
+    --text: #efe7df;
+    --muted: #b3a79d;
+    --display: "Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+    --body: "Source Sans 3", Segoe UI, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.65; font-size: 18px; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--arc); outline-offset: 3px; }
+
+  /* Navegación */
+  nav { position: sticky; top: 0; z-index: 10; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+        padding: .9rem 1rem; background: rgba(20,16,15,.92); backdrop-filter: blur(6px); border-bottom: 1px solid #3a2c28; }
+  nav a { text-decoration: none; color: var(--muted); font-weight: 600; font-size: .95rem; }
+  nav a:hover { color: var(--gold); }
+
+  /* Hero */
+  .hero { min-height: 92vh; display: grid; place-items: center; text-align: center; padding: 4rem 1.25rem;
+          background: radial-gradient(ellipse at 50% 38%, #3b1215 0%, var(--bg) 62%); }
+  .reactor { width: 170px; height: 170px; margin: 0 auto 2rem; border-radius: 50%;
+             background: radial-gradient(circle, #fff 0 8%, var(--arc) 9% 30%, #0f3e4a 31% 34%, var(--arc) 35% 38%, #0b2a33 39% 100%);
+             box-shadow: 0 0 40px 8px rgba(127,230,255,.55), 0 0 0 10px #2a2220, 0 0 0 14px var(--gold);
+             animation: pulse 3.2s ease-in-out infinite; }
+  @keyframes pulse { 50% { box-shadow: 0 0 70px 16px rgba(127,230,255,.8), 0 0 0 10px #2a2220, 0 0 0 14px var(--gold); } }
+  h1 { font-family: var(--display); font-weight: 900; font-size: clamp(4rem, 15vw, 10rem); line-height: .9; letter-spacing: .01em;
+       color: var(--gold); text-shadow: 0 4px 0 var(--red); }
+  .tagline { margin-top: 1.25rem; font-size: 1.25rem; color: var(--muted); }
+  .meta { margin-top: .5rem; color: var(--muted); font-size: 1rem; }
+  .btn { display: inline-block; margin-top: 2rem; padding: .85rem 2rem; background: var(--red); color: #fff; text-decoration: none;
+         font-weight: 600; border-radius: 4px; border: 2px solid var(--gold); transition: background .2s; }
+  .btn:hover { background: #d02a36; }
+
+  /* Secciones */
+  section { max-width: 960px; margin: 0 auto; padding: 4.5rem 1.25rem; }
+  h2 { font-family: var(--display); font-weight: 700; font-size: clamp(2.2rem, 6vw, 3.4rem); color: var(--gold);
+       margin-bottom: 1.5rem; padding-left: 1rem; border-left: 6px solid var(--red); }
+  p + p { margin-top: 1rem; }
+  .lead { max-width: 68ch; }
+
+  /* Ficha técnica */
+  dl { display: grid; grid-template-columns: max-content 1fr; gap: .6rem 1.5rem; background: var(--panel); padding: 1.5rem; border-radius: 8px; }
+  dt { color: var(--gold); font-weight: 600; }
+  dd { color: var(--text); }
+
+  /* Reparto y armaduras */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; }
+  .card { background: var(--panel); padding: 1.25rem; border-radius: 8px; border-top: 4px solid var(--red); }
+  .card h3 { font-family: var(--display); font-size: 1.6rem; line-height: 1.1; }
+  .card .role { color: var(--gold); font-weight: 600; margin: .25rem 0 .5rem; }
+  .card p { color: var(--muted); font-size: .98rem; }
+
+  /* Datos */
+  .facts { list-style: none; display: grid; gap: .9rem; max-width: 68ch; }
+  .facts li { padding-left: 1.5rem; position: relative; }
+  .facts li::before { content: ""; position: absolute; left: 0; top: .6em; width: 9px; height: 9px; border-radius: 50%; background: var(--arc); box-shadow: 0 0 8px var(--arc); }
+
+  footer { text-align: center; padding: 2.5rem 1rem; color: var(--muted); font-size: .9rem; border-top: 1px solid #3a2c28; }
+
+  @media (max-width: 560px) { dl { grid-template-columns: 1fr; gap: .1rem; } dd { margin-bottom: .7rem; } }
+  @media (prefers-reduced-motion: reduce) { .reactor { animation: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav aria-label="Principal">
+  <a href="#inicio">Inicio</a>
+  <a href="#sinopsis">Sinopsis</a>
+  <a href="#reparto">Reparto</a>
+  <a href="#armaduras">Armaduras</a>
+  <a href="#datos">Datos</a>
+  <a href="#ficha">Ficha técnica</a>
+</nav>
+
+<header class="hero" id="inicio">
+  <div>
+    <div class="reactor" role="img" aria-label="Reactor Arc de Tony Stark"></div>
+    <h1>Iron Man 3</h1>
+    <p class="tagline">Tony Stark lo pierde todo. Le queda su ingenio.</p>
+    <p class="meta">Estreno 2013 · Dirigida por Shane Black · 130 min</p>
+    <a class="btn" href="#sinopsis">Ver sinopsis</a>
+  </div>
+</header>
+
+<section id="sinopsis">
+  <h2>Sinopsis</h2>
+  <p class="lead">Tras los sucesos de Nueva York, Tony Stark sufre ansiedad y no logra dormir. Se encierra en su taller y construye armadura tras armadura, mientras su relación con Pepper Potts se resiente.</p>
+  <p class="lead">Un terrorista conocido como el Mandarín ataca Estados Unidos con una serie de bombas imposibles de rastrear. Cuando uno de esos atentados alcanza a Happy Hogan, Tony lanza un desafío público. La respuesta destruye su mansión en Malibú y lo deja sin armadura, sin recursos y sin aliados.</p>
+  <p class="lead">Perdido en un pequeño pueblo de Tennessee, Tony debe reconstruirse a sí mismo. Descubre que detrás de las explosiones está Extremis, una tecnología capaz de reprogramar el cuerpo humano, y que la amenaza real es más personal de lo que imaginaba.</p>
+</section>
+
+<section id="reparto">
+  <h2>Reparto</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Robert Downey Jr.</h3>
+      <p class="role">Tony Stark / Iron Man</p>
+      <p>El genio millonario, ahora sin su armadura y enfrentado a sus propios miedos.</p>
+    </article>
+    <article class="card">
+      <h3>Gwyneth Paltrow</h3>
+      <p class="role">Pepper Potts</p>
+      <p>Directora de Stark Industries y pieza clave en el desenlace.</p>
+    </article>
+    <article class="card">
+      <h3>Don Cheadle</h3>
+      <p class="role">James Rhodes / Iron Patriot</p>
+      <p>El teniente coronel que luce una armadura renovada con los colores de la bandera.</p>
+    </article>
+    <article class="card">
+      <h3>Guy Pearce</h3>
+      <p class="role">Aldrich Killian</p>
+      <p>Científico y empresario detrás del proyecto Extremis.</p>
+    </article>
+    <article class="card">
+      <h3>Ben Kingsley</h3>
+      <p class="role">El Mandarín</p>
+      <p>El rostro del terror que transmite mensajes a todo el país.</p>
+    </article>
+    <article class="card">
+      <h3>Rebecca Hall</h3>
+      <p class="role">Maya Hansen</p>
+      <p>Científica creadora de Extremis y antigua conocida de Tony.</p>
+    </article>
+  </div>
+</section>
+
+<section id="armaduras">
+  <h2>Armaduras</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Mark XLII</h3>
+      <p class="role">Armadura prodigiosa</p>
+      <p>Se ensambla por partes y responde a la distancia. Es la gran novedad de esta entrega, aunque todavía es inestable.</p>
+    </article>
+    <article class="card">
+      <h3>Mark XLVII</h3>
+      <p class="role">Prototipo de campo</p>
+      <p>Tony la usa durante su estancia en Tennessee.</p>
+    </article>
+    <article class="card">
+      <h3>Iron Patriot</h3>
+      <p class="role">Armadura de Rhodes</p>
+      <p>Versión del Ejército con acabado rojo, blanco y azul.</p>
+    </article>
+    <article class="card">
+      <h3>Protocolo Casa Fiesta</h3>
+      <p class="role">Ejército de armaduras</p>
+      <p>Tony llama a toda su colección para la batalla final.</p>
+    </article>
+  </div>
+</section>
+
+<section id="datos">
+  <h2>Datos</h2>
+  <ul class="facts">
+    <li>Es la tercera película de la saga Iron Man y la primera de la Fase Dos del Universo Cinematográfico de Marvel.</li>
+    <li>Shane Black, guionista de Arma Letal, tomó la dirección en lugar de Jon Favreau, quien dirigió las dos primeras.</li>
+    <li>La historia se inspira en el arco de cómic Extremis, de Warren Ellis y Adi Granov.</li>
+    <li>Recaudó más de mil millones de dólares en todo el mundo.</li>
+    <li>La acción transcurre en Navidad, un guiño al estilo de los thrillers de Shane Black.</li>
+  </ul>
+</section>
+
+<section id="ficha">
+  <h2>Ficha técnica</h2>
+  <dl>
+    <dt>Título original</dt><dd>Iron Man 3</dd>
+    <dt>Año</dt><dd>2013</dd>
+    <dt>Dirección</dt><dd>Shane Black</dd>
+    <dt>Guion</dt><dd>Drew Pearce y Shane Black</dd>
+    <dt>Duración</dt><dd>130 minutos</dd>
+    <dt>País</dt><dd>Estados Unidos</dd>
+    <dt>Género</dt><dd>Acción, ciencia ficción, superhéroes</dd>
+    <dt>Productora</dt><dd>Marvel Studios</dd>
+  </dl>
+</section>
+
+<footer>
+  Página de fans con fines informativos. Iron Man y sus personajes son propiedad de Marvel.
+</footer>
+
+</body>
+</html>
